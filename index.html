@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLM + OCR for Medical Diagnostics | Presentation</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- AOS Animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="logo">
+                <i class="fas fa-microscope text-primary"></i>
+                <span class="gradient-text">PBL 2026</span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#title">Title</a></li>
+                <li><a href="#overview">Overview</a></li>
+                <li><a href="#findings">Findings</a></li>
+                <li><a href="#architectures">Architectures</a></li>
+                <li><a href="#review">Review</a></li>
+                <li><a href="#revisions">Revisions</a></li>
+                <li><a href="#takeaways">Takeaways</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Timer Overlay -->
+    <div id="timer-container">
+        <i class="fas fa-clock"></i>
+        <span id="timer">00:00</span>
+    </div>
+
+    <main class="container">
+        <!-- SECTION 1: TITLE SLIDE -->
+        <section id="title" data-aos="fade-up">
+            <div class="glass-card">
+                <span class="badge pbl">PBL 2026 - Systematic Review</span>
+                <h1 class="gradient-text">Advancing Medical Diagnosis Through Small Language Models with Optical
+                    Character Recognition Integration</h1>
+                <p class="text-muted">A Systematic Review of Lightweight AI Architectures for Healthcare</p>
+
+                <div class="authors">
+                    <div class="badge"><i class="fas fa-user-graduate"></i> Udayan Pawar (23FE10CSE00310)</div>
+                    <div class="badge"><i class="fas fa-chalkboard-teacher"></i> Dr. Surbhi Sharma (Guide)</div>
+                    <div class="badge"><i class="fas fa-user-graduate"></i> Ishan Aanand (23FE10CSE00311)</div>
+                </div>
+
+                <p>Manipal University Jaipur | Department of Computer Science & Engineering</p>
+                <p class="text-muted">February 2026</p>
+
+                <div class="insight-box">
+                    <p><em>"Can small AI models outperform GPT-4 in medical tasks while being 100x cheaper?"</em></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 2: RESEARCH OVERVIEW -->
+        <section id="overview" data-aos="fade-up">
+            <h2 class="section-title">Research Overview</h2>
+            <div class="grid-2">
+                <div class="glass-card">
+                    <h3>The Problem Statement</h3>
+                    <ul style="margin-top: 16px; list-style-position: inside;">
+                        <li>Healthcare drowning in unstructured data (2M+ notes in MIMIC-III)</li>
+                        <li>Legacy medical records locked in scanned documents</li>
+                        <li>Handwritten prescriptions causing medication errors</li>
+                        <li>High LLM costs ($2-10 per 100 queries) block scale</li>
+                    </ul>
+                </div>
+                <div class="grid-1" style="display: flex; flex-direction: column; gap: 16px;">
+                    <div class="glass-card" style="padding: 20px;">
+                        <i class="fas fa-chart-line text-primary"></i>
+                        <strong>Performance Gap:</strong> How do medical SLMs compare against LLMs?
+                    </div>
+                    <div class="glass-card" style="padding: 20px;">
+                        <i class="fas fa-project-diagram text-primary"></i>
+                        <strong>Integration:</strong> What OCR architectures achieve clinical accuracy?
+                    </div>
+                    <div class="glass-card" style="padding: 20px;">
+                        <i class="fas fa-shield-alt text-primary"></i>
+                        <strong>Deployment:</strong> How to ensure safety in healthcare?
+                    </div>
+                </div>
+            </div>
+            <div class="stats-grid">
+                <div class="glass-card stat-item">
+                    <div class="stat-value">847</div>
+                    <div class="stat-label">Papers Identified</div>
+                </div>
+                <div class="glass-card stat-item">
+                    <div class="stat-value">57</div>
+                    <div class="stat-label">Systematically Reviewed</div>
+                </div>
+                <div class="glass-card stat-item">
+                    <div class="stat-value">5</div>
+                    <div class="stat-label">Databases Searched</div>
+                </div>
+                <div class="glass-card stat-item">
+                    <div class="stat-value">PRISMA</div>
+                    <div class="stat-label">Compliant Methodology</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 3: CORE FINDINGS -->
+        <section id="findings" data-aos="fade-up">
+            <h2 class="section-title">What We Discovered</h2>
+
+            <h3>3.1 SLMs Outperform LLMs on Extraction Tasks</h3>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Model</th>
+                            <th>Parameters</th>
+                            <th>NER F1-Score</th>
+                            <th>Cost / 100 Q</th>
+                            <th>Time</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>PubMedBERT</strong></td>
+                            <td>110M</td>
+                            <td><strong>0.909</strong></td>
+                            <td>$0</td>
+                            <td>&lt;100ms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>BioBERT</strong></td>
+                            <td>110M</td>
+                            <td>0.895</td>
+                            <td>$0</td>
+                            <td>&lt;100ms</td>
+                        </tr>
+                        <tr>
+                            <td><strong>ClinicalBERT</strong></td>
+                            <td>110M</td>
+                            <td>0.887</td>
+                            <td>$0</td>
+                            <td>&lt;100ms</td>
+                        </tr>
+                        <tr>
+                            <td>GPT-4 (zero-shot)</td>
+                            <td>Unknown</td>
+                            <td>0.599</td>
+                            <td>$2-10</td>
+                            <td>&gt;1000ms</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="insight-box">
+                "Fine-tuned medical SLMs achieve <strong>30-40% higher F1-scores</strong> than zero-shot GPT-4 while
+                being <strong>infinitely cheaper</strong>."
+            </div>
+
+            <div class="grid-2">
+                <div>
+                    <canvas id="perfChart"></canvas>
+                </div>
+                <div>
+                    <canvas id="costChart"></canvas>
+                </div>
+            </div>
+
+            <h3 style="margin-top: 48px;">3.3 OCR Engine Performance</h3>
+            <div class="grid-2">
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>OCR Engine</th>
+                                <th>CER</th>
+                                <th>Accuracy</th>
+                                <th>Best For</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Google Doc AI</td>
+                                <td>1-2%</td>
+                                <td><strong>95-99%</strong></td>
+                                <td>Forms</td>
+                            </tr>
+                            <tr>
+                                <td><strong>PaddleOCR v5</strong></td>
+                                <td>5-10%</td>
+                                <td><strong>90-95%</strong></td>
+                                <td>High Volume</td>
+                            </tr>
+                            <tr>
+                                <td>TrOCR (hand)</td>
+                                <td>8.7%</td>
+                                <td>81.3%</td>
+                                <td>Prescriptions</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div>
+                    <canvas id="ocrChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 4: THE THREE ARCHITECTURES -->
+        <section id="architectures" data-aos="fade-up">
+            <h2 class="section-title">Pipeline Architectures</h2>
+            <div class="grid-3">
+                <div class="glass-card">
+                    <h4>Architecture A</h4>
+                    <p class="text-muted">OCR-then-NER</p>
+                    <p>Standard sequential pipeline. Optimized for latency but prone to error propagation.</p>
+                </div>
+                <div class="glass-card">
+                    <h4>Architecture B</h4>
+                    <p class="text-muted">Vision-Language</p>
+                    <p>Direct image-to-text transformation. Bypasses OCR errors but requires high GPU VRAM.</p>
+                </div>
+                <div class="glass-card" style="border-color: var(--accent); background: rgba(16, 185, 129, 0.05);">
+                    <h4>Architecture C (REC)</h4>
+                    <p class="text-muted">Hybrid Multi-Engine</p>
+                    <p>Voting mechanism + Human-in-the-loop. Achieves 99%+ accuracy with safety safeguards.</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <img src="assets/image1.jpeg" alt="Architectures Flowchart"
+                    style="width: 100%; max-width: 800px; border-radius: 24px; border: 1px solid var(--glass-border);">
+            </div>
+        </section>
+
+        <!-- SECTION 5: KEY DATASETS -->
+        <section id="datasets" data-aos="fade-up">
+            <h2 class="section-title">Data Sources for Medical AI</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Dataset</th>
+                            <th>Size</th>
+                            <th>Access</th>
+                            <th>Features</th>
+                            <th>Year</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>MIMIC-III</strong></td>
+                            <td>2M+ notes</td>
+                            <td>PhysioNet</td>
+                            <td>ICU EHR</td>
+                            <td>2016</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MIMIC-IV</strong></td>
+                            <td>65K adm.</td>
+                            <td>PhysioNet</td>
+                            <td>Contemporary</td>
+                            <td>2022</td>
+                        </tr>
+                        <tr>
+                            <td><strong>MedCD</strong></td>
+                            <td>1.7M ex.</td>
+                            <td>IEEE</td>
+                            <td>30 Depts</td>
+                            <td><strong>2025</strong></td>
+                        </tr>
+                        <tr>
+                            <td>MIRAGE</td>
+                            <td>743K img</td>
+                            <td>arXiv</td>
+                            <td>Prescriptions</td>
+                            <td>2024</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="insight-box">
+                <i class="fas fa-info-circle"></i> <strong>MedCD (Feb 2025)</strong> is the newest dataset with 1.7M
+                real EHR examples rivaling MIMIC-IV's scale.
+            </div>
+        </section>
+
+        <!-- SECTION 6: THE PEER REVIEW JOURNEY -->
+        <section id="review" data-aos="fade-up">
+            <h2 class="section-title">The Review Journey</h2>
+            <div class="grid-3">
+                <div class="glass-card concern-card">
+                    <span class="badge"
+                        style="background: rgba(239, 68, 68, 0.1); color: var(--warning);">CRITICAL</span>
+                    <h4>No Original Experiments</h4>
+                    <p class="text-muted"><em>"Largely functions as a narrative review... no independent
+                            validation."</em></p>
+                    <div class="impact-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="glass-card concern-card" style="border-left-color: #f59e0b;">
+                    <span class="badge" style="background: rgba(245, 158, 11, 0.1); color: #f59e0b;">HIGH</span>
+                    <h4>Optimistic Claims</h4>
+                    <p class="text-muted"><em>"95-99% accuracy reported without discussing confounding factors."</em>
+                    </p>
+                    <div class="impact-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                            class="fas fa-star"></i>
+                    </div>
+                </div>
+                <div class="glass-card concern-card" style="border-left-color: #3b82f6;">
+                    <span class="badge" style="background: rgba(59, 130, 246, 0.1); color: #3b82f6;">MEDIUM</span>
+                    <h4>Coherence Issues</h4>
+                    <p class="text-muted"><em>"Connection between visual elements and main text is not explicit."</em>
+                    </p>
+                    <div class="impact-rating">
+                        <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                    </div>
+                </div>
+            </div>
+
+            <div class="glass-card" style="margin-top: 40px; text-align: center;">
+                <h3>Our Response Strategy</h3>
+                <div class="flow">
+                    <div class="flow-step">Initial Draft</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step" style="border-color: var(--accent);">Systematic Review (✅)</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step">PRISMA Framework</div>
+                </div>
+                <p>Repositioned as a Formal Systematic Review to provide synthesis of 847 papers immediately.</p>
+            </div>
+        </section>
+
+        <!-- SECTION 7: MAJOR REVISIONS MADE -->
+        <section id="revisions" data-aos="fade-up">
+            <h2 class="section-title">How We Transformed the Paper</h2>
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Before</th>
+                            <th>After</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Paper Type</td>
+                            <td>Original Experimental</td>
+                            <td><strong>Sytematic Review</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Methodology</td>
+                            <td>Narrative Overview</td>
+                            <td><strong>PRISMA-compliant</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Performance</td>
+                            <td>"95-99% Accuracy"</td>
+                            <td><strong>"Reported ranges..."</strong></td>
+                        </tr>
+                        <tr>
+                            <td>Limitations</td>
+                            <td>Not present</td>
+                            <td><strong>Comprehensive Section 8</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="grid-2">
+                <div class="glass-card">
+                    <h4>New Content Added</h4>
+                    <div class="revision-item"><i class="fas fa-check-circle"></i> Search strategy across 5 databases
+                    </div>
+                    <div class="revision-item"><i class="fas fa-check-circle"></i> Inclusion/Exclusion criteria</div>
+                    <div class="revision-item"><i class="fas fa-check-circle"></i> QUADAS-2 quality assessment</div>
+                    <div class="revision-item"><i class="fas fa-check-circle"></i> Operational Definitions for
+                        Multi-Engine Voting</div>
+                </div>
+                <div class="glass-card">
+                    <h4>Revised Conclusion</h4>
+                    <p class="text-muted"><em>Before:</em> "Our architecture achieves clinically acceptable accuracy."
+                    </p>
+                    <p style="margin-top: 12px;"><strong>After:</strong> "Substantial gaps remain between benchmarks and
+                        deployment. Position as <strong>decision support</strong>, not autonomous diagnostic systems."
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 8: IMPLEMENTATION GUIDE -->
+        <section id="implementation" data-aos="fade-up">
+            <h2 class="section-title">How to Build These Systems</h2>
+            <div class="grid-2">
+                <div class="glass-card">
+                    <h4>Training Configuration</h4>
+                    <table>
+                        <tr>
+                            <td>Learning Rate</td>
+                            <td>2e-5</td>
+                        </tr>
+                        <tr>
+                            <td>Batch Size</td>
+                            <td>16</td>
+                        </tr>
+                        <tr>
+                            <td>Optimizer</td>
+                            <td>Adam</td>
+                        </tr>
+                    </table>
+                    <h4 style="margin-top: 24px;">Hardware Requirements</h4>
+                    <ul style="list-style-position: inside;">
+                        <li>BERT-base: RTX 3060 (12GB)</li>
+                        <li>BioGPT: A100 (40GB)</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h4>Quick Start (Transformers)</h4>
+                    <pre><code>from transformers import AutoModelForTokenClassification
+
+model = AutoModelForTokenClassification.from_pretrained(
+    "microsoft/BiomedNLP-PubMedBERT-base"
+)
+# Fine-tune on your clinical data</code></pre>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 40px;">
+                <img src="assets/image2.jpeg" alt="Preprocessing Pipeline"
+                    style="width: 100%; max-width: 800px; border-radius: 24px; border: 1px solid var(--glass-border);">
+            </div>
+        </section>
+
+        <!-- SECTION 9: LIMITATIONS -->
+        <section id="limitations" data-aos="fade-up">
+            <h2 class="section-title">The Hard Truths</h2>
+            <div class="grid-2">
+                <div class="glass-card concern-card">
+                    <h4>The OCR Error Cascade</h4>
+                    <p>5% Character Error Rate doesn't scale linearly!</p>
+                    <p class="stat-value" style="font-size: 1.5rem; margin: 12px 0;">5% CER &rarr; 25% Entity Error</p>
+                    <p>Example: "metformin 500mg" &rarr; "metformin 50mg" (10x dosage error!)</p>
+                </div>
+                <div class="glass-card">
+                    <h4>Benchmark vs Reality</h4>
+                    <table>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>Bench</th>
+                            <th>Real</th>
+                        </tr>
+                        <tr>
+                            <td>Quality</td>
+                            <td>High-res</td>
+                            <td>Faded Faxes</td>
+                        </tr>
+                        <tr>
+                            <td>Accuracy</td>
+                            <td>95-99%</td>
+                            <td><strong>75-85%</strong></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="insight-box" style="border-left-color: var(--warning);">
+                <strong>MANDATORY:</strong> Human oversight for ALL clinical decisions. Never deploy without clinical
+                review.
+            </div>
+        </section>
+
+        <!-- SECTION 10: FUTURE WORK -->
+        <section id="future" data-aos="fade-up">
+            <h2 class="section-title">Experimental Validation Roadmap</h2>
+            <div class="glass-card">
+                <div class="flow">
+                    <div class="flow-step">Acquisition</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step">Implementation</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step">Ablation</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step">Real-World</div>
+                    <div class="flow-arrow"><i class="fas fa-arrow-right"></i></div>
+                    <div class="flow-step">Publication</div>
+                </div>
+                <p style="text-align: center;"><strong>Total Timeline:</strong> 12-14 Months | <strong>Target:</strong>
+                    ACL/EMNLP/NAACL</p>
+            </div>
+        </section>
+
+        <!-- SECTION 11: KEY TAKEAWAYS -->
+        <section id="takeaways" data-aos="fade-up">
+            <h2 class="section-title">TL;DR: Key Takeaways</h2>
+            <div class="grid-2">
+                <div class="glass-card">
+                    <h4>1. Hybrid Strategy is Key</h4>
+                    <p>SLMs for Extraction, LLMs for Reasoning.</p>
+                </div>
+                <div class="glass-card">
+                    <h4>2. Cost Savings</h4>
+                    <p>SLMs can save $7.3M/year for 1M daily queries.</p>
+                </div>
+                <div class="glass-card">
+                    <h4>3. Architecture C wins</h4>
+                    <p>Multi-engine voting + Human-in-the-loop = Safety.</p>
+                </div>
+                <div class="glass-card">
+                    <h4>4. Human Oversight</h4>
+                    <p>Non-negotiable requirement for clinical safety.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 12: REFERENCES -->
+        <section id="#references" data-aos="fade-up">
+            <h2 class="section-title">References & Resources</h2>
+            <div class="grid-2">
+                <div class="glass-card">
+                    <h4>Key Papers</h4>
+                    <ul style="list-style-position: inside; color: var(--text-muted);">
+                        <li>Gu et al. (2020) - PubMedBERT</li>
+                        <li>Zhang et al. (2025) - Benchmarking LLMs</li>
+                        <li>Mankash et al. (2024) - MIRAGE dataset</li>
+                        <li>Chen et al. (2025) - MedCD Dataset</li>
+                    </ul>
+                </div>
+                <div class="glass-card">
+                    <h4>Links</h4>
+                    <p><i class="fab fa-github"></i> <a href="#">GitHub Repository</a></p>
+                    <p><i class="fas fa-file-powerpoint"></i> <a
+                            href="https://drive.google.com/drive/folders/13D9kVi2GdFOSHzPsG0yy4NeP7J5eZzEC?usp=drive_link"
+                            target="_blank">Presentation PPT</a></p>
+                    <p><i class="fas fa-file-pdf"></i> <a href="#">Full Paper PDF</a></p>
+                    <p><i class="fas fa-envelope"></i> <a href="mailto:udayan.23fe10cse00310@muj.manipal.edu">Contact
+                            Team</a></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SECTION 13: TEAM -->
+        <section id="team" data-aos="fade-up">
+            <h2 class="section-title">Our Team</h2>
+            <div class="grid-3">
+                <div class="glass-card stat-item">
+                    <i class="fas fa-chalkboard-teacher" style="font-size: 2rem; color: var(--secondary);"></i>
+                    <h4>Dr. Surbhi Sharma</h4>
+                    <p class="text-muted">Project Guide</p>
+                </div>
+                <div class="glass-card stat-item">
+                    <i class="fas fa-user-graduate" style="font-size: 2rem; color: var(--primary);"></i>
+                    <h4>Udayan Pawar</h4>
+                    <p class="text-muted">Lead Researcher</p>
+                </div>
+                <div class="glass-card stat-item">
+                    <i class="fas fa-user-graduate" style="font-size: 2rem; color: var(--primary);"></i>
+                    <h4>Ishan Aanand</h4>
+                    <p class="text-muted">Co-Researcher</p>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 60px;">
+                <p><strong>Manipal University Jaipur</strong></p>
+                <p class="text-muted">Department of Computer Science & Engineering</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="text-align: center; padding: 40px; border-top: 1px solid var(--glass-border);">
+        <p class="text-muted">&copy; 2026 PBL Presentation. All rights reserved.</p>
+    </footer>
+
+    <!-- Libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="script.js"></script>
+</body>
+
+</html>
